@@ -1,0 +1,48 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue';
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  gap: 1rem;
+  background-image: linear-gradient(to right bottom, magenta, black, mediumturquoise);
+
+  .circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: right;
+    transition: clip-path 0.5s ease;
+
+    &:nth-child(1) {
+      clip-path: circle(250px at 0% 0%);
+    }
+    &:nth-child(2) {
+      clip-path: circle(250px at 100% 0%);
+    }
+    &:nth-child(3) {
+      clip-path: circle(250px at 100% 100%);
+    }
+    &:nth-child(4) {
+      clip-path: circle(250px at 0% 100%);
+    }
+
+    &:hover {
+      z-index: 2;
+      clip-path: circle(1200px at 50% 50%);
+    }
+  }
+}
